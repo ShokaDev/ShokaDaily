@@ -59,6 +59,7 @@ python right_now.py
 
 Gantilah `Right_Now.py` dengan nama file lirik lain yang ingin kamu tampilkan.
 
+```
 ---
 
 ## 📝 Contoh Lirik
