@@ -1,6 +1,6 @@
 ---
 
-```markdown
+
 # 🎵 Lyric Player in Terminal (Python)
 
 Ini adalah script Python sederhana yang menampilkan **lirik lagu secara animasi di terminal**, dengan efek "mesin ketik" dan jeda waktu per baris. Cocok digunakan untuk membuat konten seperti TikTok dengan gaya terminal.
@@ -87,9 +87,8 @@ Script ini dibuat untuk membantu membuat konten dengan gaya teks terminal animas
 ---
 
 ## 📖 Lisensi
-
+```
 Gratis digunakan dan dimodifikasi untuk keperluan pribadi atau edukasi.
-
 ```
 
 ---
