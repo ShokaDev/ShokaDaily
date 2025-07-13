@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.group{
+    position: relative;
+}
+
+input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+label {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.3s ease all;
+}
+
+input:focus ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #7700ff;
+}
+
+input:focus {
+    border-width: 2px;
+    border-bottom-color: #7700ff;
+}
