@@ -1,4 +1,4 @@
----
+
 
 # 📌 CSS Sticky Sidebar Layout
 
@@ -24,15 +24,13 @@ This layout uses basic HTML & CSS to build a two-column layout:
 
 ## 📂 File Structure
 
-
-
+```dropdown
 sticky-sidebar/
 │
 ├── index.html        ← HTML structure
 ├── style.css         ← Styles for layout and sticky behavior
 ├── README.md
-
-
+```
 
 ---
 
