@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Button Hover Animation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #dde8f5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    /* Tombol 1: Scale on hover */
+    .btn-scale {
+      background-color: #007bff;
+      color: white;
+    }
+    .btn-scale:hover {
+      transform: scale(1.05);
+      background-color: #0056b3;
+    }
+
+    /* Tombol 2: Shadow & lift */
+    .btn-lift {
+      background-color: #28a745;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Tombol 3: Border animation */
+    .btn-border {
+      background: white;
+      color: #ff4d4f;
+      border: 2px solid #ff4d4f;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-border::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ff4d4f;
+      top: 100%;
+      left: 0;
+      z-index: 0;
+      transition: top 0.3s ease;
+    }
+    .btn-border:hover::after {
+      top: 0;
+    }
+    .btn-border:hover {
+      color: white;
+    }
+    .btn-border span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tombol 4: Gradient slide */
+    .btn-gradient {
+      background: linear-gradient(to right, #ff7a18, #af002d, #319197);
+      background-size: 200%;
+      color: white;
+    }
+    .btn-gradient:hover {
+      background-position: right;
+    }
+
+    @media(max-width: 500px) {
+      .btn-group {
+        gap: 0.75rem;
+      }
+
+      button {
+        font-size: 0.95rem;
+        padding: 0.7rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Button Hover Effects</h1>
+  <div class="btn-group">
+    <button class="btn-scale">🔍 Hover Scale</button>
+    <button class="btn-lift">☁️ Lift & Shadow</button>
+    <button class="btn-border"><span>🚨 Border Slide</span></button>
+    <button class="btn-gradient">🌈 Gradient Slide</button>
+  </div>
+</body>
+</html>

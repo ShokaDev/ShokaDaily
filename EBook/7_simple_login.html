@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #eef2f3, #dfe9f3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 360px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #555;
+    }
+
+    .input-group{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    input {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer-text {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media(max-width: 480px) {
+      .login-box {
+        margin: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>🔐 Login</h2>
+    <form onsubmit="return validateForm()">
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="email@example.com" required />
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Masukkan password" required />
+      </div>
+
+      <button type="submit">Login</button>
+    </form>
+    <div class="footer-text">Belum punya akun? <a href="#">Daftar</a></div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("password").value;
+
+      if (!email || !pass) {
+        alert("Semua field wajib diisi!");
+        return false;
+      }
+
+      alert("Login sukses (simulasi)");
+      return false; // biar ngga reload halaman
+    }
+  </script>
+</body>
+</html>

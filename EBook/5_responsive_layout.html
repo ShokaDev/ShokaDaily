@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      min-width: 250px;
+      max-width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #007bff;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🧱 Responsive Layout</h1>
+  <div class="container">
+    <div class="card">
+      <h2>Kolom 1</h2>
+      <p>Ini adalah isi dari kolom pertama. Layout ini fleksibel dan akan menyesuaikan ukuran layar.</p>
+    </div>
+    <div class="card">
+      <h2>Kolom 2</h2>
+      <p>Layout ini menggunakan Flexbox dan media query agar tetap nyaman di HP maupun desktop.</p>
+    </div>
+    <div class="card">
+      <h2>Kolom 3</h2>
+      <p>Latihan ini cocok untuk membangun halaman portofolio atau landing page sederhana.</p>
+    </div>
+  </div>
+</body>
+</html>

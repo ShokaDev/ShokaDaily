@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Background Changer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f0f0f0;
+      transition: background-color 0.5s ease;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .color-code {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #555;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      backdrop-filter: blur(3px);
+    }
+
+    @media(max-width: 500px) {
+      button {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Ganti Background</h1>
+  <button onclick="changeColor()">Ganti Warna</button>
+  <div class="color-code" id="colorText">Warna saat ini: #f0f0f0</div>
+
+  <script>
+    const colors = ["#f0f0f0", "#ffadad", "#ffd6a5", "#fdffb6", "#caffbf", "#9bf6ff", "#a0c4ff", "#bdb2ff", "#ffc6ff", "#d0f4de"];
+    const colorText = document.getElementById("colorText");
+
+    function changeColor() {
+      const randomIndex = Math.floor(Math.random() * colors.length);
+      const selectedColor = colors[randomIndex];
+      document.body.style.backgroundColor = selectedColor;
+      colorText.textContent = "Warna saat ini: " + selectedColor;
+    }
+  </script>
+</body>
+</html>

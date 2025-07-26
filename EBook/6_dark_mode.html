@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Mode Toggle</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      transition: background-color 0.4s, color 0.4s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .dark-mode {
+      background-color: #1e1e1e;
+      color: #f1f1f1;
+    }
+
+    button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .dark-mode button {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .dark-mode button:hover {
+      background-color: #666;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    @media(max-width: 500px) {
+      body {
+        padding: 1.5rem;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌓 Toggle Dark Mode</h1>
+  <button onclick="toggleMode()">🌙 Aktifkan Dark Mode</button>
+
+  <script>
+    const body = document.body;
+    const button = document.querySelector("button");
+
+    function toggleMode() {
+      body.classList.toggle("dark-mode");
+      if (body.classList.contains("dark-mode")) {
+        button.textContent = "🌞 Kembali ke Light Mode";
+      } else {
+        button.textContent = "🌙 Aktifkan Dark Mode";
+      }
+    }
+  </script>
+</body>
+</html>
