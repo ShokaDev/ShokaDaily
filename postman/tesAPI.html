@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Anime ONA - Rating</title>
+</head>
+<body>
+    <h1>Top Anime</h1>
+    
+    <!-- Elemen untuk menampung daftar anime -->
+    <ul id="anime-list"></ul>
+
+    <script>
+        // URL API dari Jikan untuk mendapatkan Top Anime ONA
+        const apiURL = "https://api.jikan.moe/v4/seasons/now?sfw";
+
+        // Menggunakan fetch() untuk mengambil data dari API
+        fetch(apiURL)
+            .then(response => response.json()) // Mengubah respons menjadi format JSON
+            .then(data => {
+                // Ambil elemen UL yang akan menampung list anime
+                const list = document.getElementById('anime-list');
+
+                // Looping data anime dari API
+                data.data.forEach(anime => {
+                    // Membuat elemen list baru untuk setiap anime
+                    const li = document.createElement('li');
+
+                    // Menambahkan teks: Judul Anime - Score - Scored By
+                    // anime.score → nilai rating
+                    // anime.scored_by → jumlah orang yang memberikan rating
+                    li.textContent = `${anime.title} - Score: ${anime.score} (by ${anime.scored_by} users)`;
+
+                    // Masukkan elemen list ke dalam UL
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => {
+                // Jika terjadi error saat fetch API
+                console.error("Gagal mengambil data API:", error);
+            });
+    </script>
+</body>
+</html>
