@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Animated Underline</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    nav {
+      position: relative;
+      display: flex;
+      gap: 2rem;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    nav a {
+      position: relative;
+      text-decoration: none;
+      color: #333;
+      padding: 5px 0;
+    }
+
+    /* underline indicator */
+    .underline {
+      position: absolute;
+      bottom: -5px;
+      height: 3px;
+      background: #007bff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      -o-transition-delay: 200ms;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <span class="underline"></span>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
