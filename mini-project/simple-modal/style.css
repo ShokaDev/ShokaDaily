@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap');
+
+body {
+    font-family: 'Alan Sans', sans-serif;
+    padding: 3rem 0;
+    text-align: center;
+    background: conic-gradient(
+        #eee 90deg,
+        white 90deg 180deg,
+        #eee 180deg 270deg,
+        white 270deg
+    ) 0 0 / 6rem 6rem;
+}
+
+.modal-button{
+    border: 2px solid black;
+    border-radius: 0.25rem;
+    padding: 0.75rem 2rem;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.modal{ /* Mulai dari sini fungsi modal nya */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    &:target {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Sampai sini aja udah fungsi modal nya, namun mulai kebawah cuman hiasan aja */
+
+.modal-content{
+    width: 25rem;
+    background-color: white;
+    padding: 2rem;
+    position: relative;
+}
+
+.modal-close-button{
+    text-decoration: none;
+    padding: 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+}

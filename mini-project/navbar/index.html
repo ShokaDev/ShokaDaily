@@ -4,53 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Navbar Animated Underline</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f4f4f4;
-    }
-
-    nav {
-      position: relative;
-      display: flex;
-      gap: 2rem;
-      font-size: 18px;
-      font-weight: 600;
-    }
-
-    nav a {
-      position: relative;
-      text-decoration: none;
-      color: #333;
-      padding: 5px 0;
-    }
-
-    /* underline indicator */
-    .underline {
-      position: absolute;
-      bottom: -5px;
-      height: 3px;
-      background: #007bff;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-      -o-transition-delay: 200ms;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <nav>
-    <a href="#" class="active">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-    <span class="underline"></span>
+<body class="flex justify-center items-center h-screen bg-gray-100">
+  <nav class="relative flex gap-8 text-lg font-semibold">
+    <a href="#" class="relative text-gray-800 py-1 active">Home</a>
+    <a href="#" class="relative text-gray-800 py-1">About</a>
+    <a href="#" class="relative text-gray-800 py-1">Services</a>
+    <a href="#" class="relative text-gray-800 py-1">Contact</a>
+    <!-- underline -->
+    <span 
+      class="underline absolute bottom-0 h-[3px] bg-blue-500 rounded transition-all duration-300 ease-in-out"
+      style="width:0; left:0;"
+    ></span>
   </nav>
 
-  <script src="script.js"></script>
+  <script>
+    const nav = document.querySelector("nav");
+    const underline = document.querySelector(".underline");
+    const links = nav.querySelectorAll("a");
+
+    function moveUnderline(el) {
+      underline.style.width = `${el.offsetWidth}px`;
+      underline.style.left = `${el.offsetLeft}px`;
+    }
+
+    // aktif pertama kali (Home)
+    const active = nav.querySelector(".active");
+    moveUnderline(active);
+
+    // hover effect
+    links.forEach(link => {
+      link.addEventListener("mouseenter", e => moveUnderline(e.target));
+      link.addEventListener("mouseleave", () => moveUnderline(active));
+      link.addEventListener("click", e => {
+        links.forEach(l => l.classList.remove("active"));
+        e.target.classList.add("active");
+        moveUnderline(e.target);
+      });
+    });
+  </script>
 </body>
 </html>
